@@ -1,11 +1,13 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import createSagaMiddleware from 'redux-saga'
 
+import referenciaReducer from './slices/referenciaSlice'
 import rootSaga from './saga'
 
 const sagaMiddleware = createSagaMiddleware()
 
 const reducer = combineReducers({
+  referencia: referenciaReducer
 })
 
 export const store = configureStore({
