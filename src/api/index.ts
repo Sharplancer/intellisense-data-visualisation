@@ -5,12 +5,11 @@ const API_URL = 'https://reference.intellisense.io/thickenernn/v1/referencia'
 export const intellisenseApi = {
   async getReferencia() {
     try {
-      const res = await axios({
+      const res: any = await axios({
         method: 'get',
         url: API_URL,
       })
-      const resBody = res.data
-      return resBody
+      return res;
     } catch (err) {
       throw err
     }

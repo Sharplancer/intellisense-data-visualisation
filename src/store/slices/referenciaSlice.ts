@@ -5,7 +5,7 @@ const refernciaSlice = createSlice({
   initialState: {
     getting: false,
     got: false,
-    data: {} as {},
+    data: [],
 
     error: {}
   },
@@ -20,7 +20,14 @@ const refernciaSlice = createSlice({
     getReferenciaSuccess(state, action) {
       state.getting = false
       state.got = true
-      state.data = action.payload
+      const TK1 = action.payload.current && action.payload.current.data.TK1
+      const filtered = Object.fromEntries(
+        Object.entries(TK1)
+        .filter(
+          (key: any) => /^TK1_/gm.test(key)
+        )
+      );
+      state.data = Object.entries(filtered) as []
     },
     getReferenciaError(state, action) {
       state.getting = false

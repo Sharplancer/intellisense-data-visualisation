@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
 interface Props {
   title: string
@@ -8,6 +10,12 @@ interface Props {
 const Table: React.FC<Props> = (props: Props) => {
 
   const { title } = props;
+
+  const { data, getting } = useSelector((state: RootState) => state.referencia);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
 	return (
 		<>
@@ -33,7 +41,7 @@ const Table: React.FC<Props> = (props: Props) => {
 							</tr>
 						</thead>
 						<tbody>
-							{		pending && (
+							{	getting && (
                   <tr>
                     <th colSpan={2} className="border-0 p-4 align-middle text-xs whitespace-no-wrap text-center flex items-center">
                       Loading...
