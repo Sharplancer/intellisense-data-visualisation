@@ -5,7 +5,7 @@ const refernciaSlice = createSlice({
   initialState: {
     getting: false,
     got: false,
-    data: [],
+    data: [] as any[],
 
     error: {}
   },
