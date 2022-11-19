@@ -2,18 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 interface Props {
-  title: string,
-  data: any,
-  pending: boolean,
-  error: boolean
+  title: string
 }
 
 const Table: React.FC<Props> = (props: Props) => {
 
-  const { title, data, pending, error } = props;
-
-	const rowItem = () => {
-	};
+  const { title } = props;
 
 	return (
 		<>
