@@ -1,3 +1,58 @@
+# Intellisense Data Visualisation
+
+### [Click here to visit live website](https://intellisense-data-visualisation.vercel.app/)
+
+## Used Technologies
+- React 18
+- TypeScript
+- Redux
+- Saga
+- Axios
+- D3
+- Chart.js
+- Tailwind
+- Hooks
+
+## Infrastructure
+
+```
+-src
+    |-api
+        |-index.ts      // using axios method to make a api request - called by saga
+    |-components
+        |-Table.tsx             //a table
+        |-LineGraphD3.tsx       //a linegraph using d3
+        |-LineGraphChart.tsx    //a linegraph using chart.js
+    |-pages
+        |-Home.tsx      //home component for showing components for table and linegraphs
+    |-store
+        |-index.ts      //configurates redux store
+        |-saga.ts       //connects saga functions and reducers
+        |-slices
+            |-referenciaSlice.ts    //a reducer for referencia data
+        |-saga
+            |-referenciaSaga.ts     //a saga for calling referencia api
+
+```
+
+## Running the app on your local
+
+1. Clone the project from Github
+
+    ```
+    git clone https://github.com/Sharplancer/intellisense-data-visualisation.git
+    ```
+
+2. Install node modules for the project
+    ```
+    npm install
+    ```
+
+3. Run the project
+    ```
+    npm start run
+    ```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
