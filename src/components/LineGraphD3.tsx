@@ -33,7 +33,7 @@ const LineGraphD3: React.FC<Props> = (props: Props) => {
     })
 
     var margin = { top: 20, right: 80, bottom: 30, left: 50 },
-         width = 1000 - margin.left - margin.right,
+         width = window.innerWidth - 30 - margin.left - margin.right,
          height = 500 - margin.top - margin.bottom;
 
     const yMaxValue = d3.max(chartData, (d: any) => d3.max(d.lineData, (d: any) => { return d.value })) as any + 30;
@@ -94,7 +94,7 @@ const LineGraphD3: React.FC<Props> = (props: Props) => {
             });
       
           legend.append('rect')
-            .attr('x', width - 170)
+            .attr('x', width - 260)
             .attr('fill', 'none')
             .attr('y', function(d, i) {
                 return i * 20;
@@ -106,7 +106,7 @@ const LineGraphD3: React.FC<Props> = (props: Props) => {
               });
       
           legend.append('text')
-            .attr('x', width - 152)
+            .attr('x', width - 242)
             .attr('y', function(d, i) {
                 return (i * 20) + 11;
               })

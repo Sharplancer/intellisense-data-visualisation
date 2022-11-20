@@ -13,11 +13,11 @@ const Home: React.FC = () => {
   })
 
   return (
-    <>
+    <div className="flex flex-wrap mt-4 p-4">
       <Table title="Table"></Table>
       <LineGraphD3 title="LineGraph with D3.js"></LineGraphD3>
       <LineGraphChart title="LineGraph with Chart.js"></LineGraphChart>
-    </>
+    </div>
   );
 }
 
