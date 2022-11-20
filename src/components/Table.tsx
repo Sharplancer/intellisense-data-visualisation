@@ -13,10 +13,6 @@ const Table: React.FC<Props> = (props: Props) => {
 
   const { data, getting } = useSelector((state: RootState) => state.referencia);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
 	return (
 		<>
 			<div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blue-900 text-white">
