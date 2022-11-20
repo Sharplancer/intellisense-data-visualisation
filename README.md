@@ -2,6 +2,13 @@
 
 ### [Click here to visit live website](https://intellisense-data-visualisation.vercel.app/)
 
+## Important notes
+Got JSON data from https://reference.intellisense.io/thickenernn/v1/referencia and visualise the data to a table and two linegraphs (one is using d3 and another one is using chart.js).
+
+- Entries start with `HDT1` are shown in the table
+- Entries start with `TK1_` are used for linegraphs
+
+
 ## Used Technologies
 - React 18
 - TypeScript
