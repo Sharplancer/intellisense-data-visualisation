@@ -33,7 +33,7 @@ const LineGraphD3: React.FC<Props> = (props: Props) => {
     })
 
     var margin = { top: 20, right: 80, bottom: 30, left: 50 },
-         width = window.innerWidth / 2 - 60 - margin.left - margin.right,
+         width = window.innerWidth / 2 - margin.left - margin.right,
          height = 360 - margin.top - margin.bottom;
 
     const yMaxValue = d3.max(chartData, (d: any) => d3.max(d.lineData, (d: any) => { return d.value })) as any + 30;
