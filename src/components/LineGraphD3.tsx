@@ -10,11 +10,11 @@ interface Props {
 const LineGraphD3: React.FC<Props> = (props: Props) => {
   const { title } = props;
 
-  const { data, getting, error } = useSelector((state: RootState) => state.referencia);
+  const { tk1Data, getting, error } = useSelector((state: RootState) => state.referencia);
 
   useEffect(() => {
-    data.length > 0 && drawLineChart(data);
-  }, [data]);
+    tk1Data.length > 0 && drawLineChart(tk1Data);
+  }, [tk1Data]);
 
   const drawLineChart = (data: any) => {
     let chartData: any = [];

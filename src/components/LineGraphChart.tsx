@@ -16,10 +16,10 @@ declare global {
 const LineGraphChart: React.FC<Props> = (props: Props) => {
   const { title } = props;
 
-  const { data, getting, error } = useSelector((state: RootState) => state.referencia);
+  const { tk1Data, getting, error } = useSelector((state: RootState) => state.referencia);
 
   useEffect(() => {
-		if (getting || data.length === 0)
+		if (getting || tk1Data.length === 0)
 			return;
 
 		const colours = [
@@ -37,7 +37,7 @@ const LineGraphChart: React.FC<Props> = (props: Props) => {
 
 		let datasets: any = [];
 		// datasets
-		data.forEach((item, i) => {
+		tk1Data.forEach((item, i) => {
 			datasets.push({
 				label: item[0],
 				backgroundColor: colours[i],
@@ -50,7 +50,7 @@ const LineGraphChart: React.FC<Props> = (props: Props) => {
 		const config = {
 			type: "line",
 			data: {
-				labels: data[0][1].times,
+				labels: tk1Data[0][1].times,
 				datasets,
 			},
 			options: {
@@ -126,7 +126,7 @@ const LineGraphChart: React.FC<Props> = (props: Props) => {
 		};
 		const ctx = (document.getElementById("line-chart-2") as any).getContext("2d");
     window.myLine = new Chart(ctx, config as any);
-	}, [data, getting, error]);
+	}, [tk1Data, getting, error]);
 
 	const loading = () => {
 		if (getting) {

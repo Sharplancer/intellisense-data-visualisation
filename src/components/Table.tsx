@@ -11,7 +11,7 @@ const Table: React.FC<Props> = (props: Props) => {
 
   const { title } = props;
 
-  const { data, getting } = useSelector((state: RootState) => state.referencia);
+  const { hdt1Data, getting } = useSelector((state: RootState) => state.referencia);
 
 	return (
 		<>
@@ -46,7 +46,7 @@ const Table: React.FC<Props> = (props: Props) => {
                 )
               }
               {
-                data.map((item: any, index: number) => {
+                hdt1Data.map((item: any, index: number) => {
                   const lastValue = item[1].values[item[1].values.length - 1];
                   return (
                     <tr key={index}>
