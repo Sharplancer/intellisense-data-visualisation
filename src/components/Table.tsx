@@ -46,10 +46,10 @@ const Table: React.FC<Props> = (props: Props) => {
                 )
               }
               {
-                data.map((item: any) => {
+                data.map((item: any, index: number) => {
                   const lastValue = item[1].values[item[1].values.length - 1];
                   return (
-                    <tr>
+                    <tr key={index}>
                       <th className="border-0 p-4 align-middle text-xs whitespace-no-wrap text-left flex items-center">
                         {item[0]}
                       </th>

@@ -14,7 +14,7 @@ const LineGraphD3: React.FC<Props> = (props: Props) => {
 
   useEffect(() => {
     data.length > 0 && drawLineChart(data);
-  }, [data])
+  }, [data]);
 
   const drawLineChart = (data: any) => {
     let chartData: any = [];
@@ -33,8 +33,8 @@ const LineGraphD3: React.FC<Props> = (props: Props) => {
     })
 
     var margin = { top: 20, right: 80, bottom: 30, left: 50 },
-         width = window.innerWidth - 30 - margin.left - margin.right,
-         height = 500 - margin.top - margin.bottom;
+         width = window.innerWidth / 2 - 60 - margin.left - margin.right,
+         height = 360 - margin.top - margin.bottom;
 
     const yMaxValue = d3.max(chartData, (d: any) => d3.max(d.lineData, (d: any) => { return d.value })) as any + 30;
     const xMinValue = d3.min(chartData[0].lineData, (d: any) => d.label);

@@ -10,13 +10,15 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     dispatch(getReferencia());
-  })
+  }, [])
 
   return (
-    <div className="flex flex-wrap mt-4 p-4">
+    <div className="flex flex-wrap mt-4 p-4 w-full">
       <Table title="Table"></Table>
-      <LineGraphD3 title="LineGraph with D3.js"></LineGraphD3>
-      <LineGraphChart title="LineGraph with Chart.js"></LineGraphChart>
+      <div className="flex w-full">
+        <LineGraphD3 title="LineGraph with D3.js"></LineGraphD3>
+        <LineGraphChart title="LineGraph with Chart.js"></LineGraphChart>
+      </div>
     </div>
   );
 }
